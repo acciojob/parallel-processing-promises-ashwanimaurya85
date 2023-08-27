@@ -1,7 +1,7 @@
 const images = [
-      { url: 'image_url_1.jpg' },
-      { url: 'image_url_2.jpg' },
-      { url: 'image_url_3.jpg' }
+      { url: 'https://th.bing.com/th/id/OIP.4XB8NF1awQyApnQDDmBmQwHaEo?pid=ImgDet&rs=1' },
+      { url: 'https://th.bing.com/th/id/OIP.4XB8NF1awQyApnQDDmBmQwHaEo?pid=ImgDet&rs=1' },
+      { url: 'https://th.bing.com/th/id/OIP.4XB8NF1awQyApnQDDmBmQwHaEo?pid=ImgDet&rs=1' }
       // Add more image URLs as needed
     ];
 
