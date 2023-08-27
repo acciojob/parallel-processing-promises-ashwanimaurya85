@@ -1,9 +1,29 @@
-//your JS code here. If required.
-const output = document.getElementById("output");
-const btn = document.getElementById("download-images-button");
-
 const images = [
-  { url: "https://picsum.photos/id/237/200/300" },
-  { url: "https://picsum.photos/id/238/200/300" },
-  { url: "https://picsum.photos/id/239/200/300" },
-];
+      { url: 'image_url_1.jpg' },
+      { url: 'image_url_2.jpg' },
+      { url: 'image_url_3.jpg' }
+      // Add more image URLs as needed
+    ];
+
+    function downloadImage(url) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image's URL: ${url}`));
+      });
+    }
+
+    document.getElementById('download-images-button').addEventListener('click', async () => {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+
+      try {
+        const downloadedImages = await Promise.all(images.map(image => downloadImage(image.url)));
+        downloadedImages.forEach(img => {
+          outputDiv.appendChild(img);
+        });
+      } catch (error) {
+        console.error(error.message);
+      }
+    });
